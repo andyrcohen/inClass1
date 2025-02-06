@@ -40,7 +40,8 @@ app.get('/auth/google/callback', passport.authenticate('google',
     // Successful authentication, redirect home
     // set a breakpoint here and confirm user info…
     // this is what we’ll put in our JWT
-    res.send(req.user);
+    res.user = req.user
+    res.sendfile('index.html');
 }
 )
 
